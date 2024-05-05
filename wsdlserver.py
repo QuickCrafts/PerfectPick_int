@@ -18,7 +18,7 @@ class solicitudSOAP(ServiceBase):
     @rpc(_returns=Iterable(Book))
     def getBooks(self):
         # Construir la solicitud GraphQL
-        url = 'http://localhost:9000/graphql'
+        url = 'http://apigateway:9000/graphql'
         headers = {'Content-Type': 'application/json'}
         query = '''
         query{
