@@ -59,7 +59,7 @@ wsdl = """
     </binding>
     <service name="BookService">
         <port name="BookServicePort" binding="tns:BookServiceBinding">
-            <soap:address location="http://localhost:8082"/>
+            <soap:address location="http://localhost:7777"/>
         </port>
     </service>
 </definitions>

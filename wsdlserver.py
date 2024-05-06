@@ -19,7 +19,6 @@ class solicitudSOAP(ServiceBase):
     def getBooks(self):
         # Construir la solicitud GraphQL
         url = 'http://apigateway:9000/graphql'
-        headers = {'Content-Type': 'application/json'}
         query = '''
         query{
           GetBooks{
@@ -36,7 +35,7 @@ class solicitudSOAP(ServiceBase):
         '''
         url +=  '?query=' + query
         # Enviar la solicitud GraphQL
-        response = requests.get(url ,headers=headers)
+        response = requests.get(url)
 
         # Devolver la respuesta como un string
         response_json = response.json()
@@ -50,7 +49,7 @@ application = Application([solicitudSOAP], 'http://example.com/bookservice',
 # Crear el servidor WSGI
 wsgi_application = WsgiApplication(application)
 
-# Ejecutar el servidor en el puerto 8082
+# Ejecutar el servidor en el puerto 7777
 if __name__ == '__main__':
     from wsgiref.simple_server import make_server
     port = 7777
